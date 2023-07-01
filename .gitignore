@@ -1,6 +1,13 @@
+
+# Binaries
 *.aax
-password.txt
 AAXtoMP3-master
 activation.blob
-audible-activator-feature_login_as_arg/
 chromedriver
+
+# Secrets
+password.txt
+audible-activator-feature_login_as_arg/
+!.secrets/
+.secrets/*
+!.secrets/*.sample
