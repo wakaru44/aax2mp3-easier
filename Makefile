@@ -38,3 +38,6 @@ old-encode: .secrets/audible_pass ## Start encoding files with the big do-it-all
 
 encode: .secrets/activation_bytes ## Start encoding using just the minimal tool
 	bash AAXtoMP3-master/AAXtoMP3 -A $(shell cat .secrets/activation_bytes) --target_dir ./output_books source_books/*.aax
+
+process: get-aax ## Process the files in order. needs an initialised project
+	bin/process.sh > process_$(shell date +%F:%H:%M  ).log 2>&1
