@@ -6,9 +6,9 @@ FILES=$3
 
 # Check if the number of arguments is equal or greater than 3.
 if [ "$#" -lt 3 ]; then
-    echo "Illegal number of parameters, expecting at least 3. Usage:"
-    echo -e "  $ bash aax2mp3_easy.sh <audible_login> <audible_password> <files_to_be_converted.aax> \n"
-    exit 1
+	echo "Illegal number of parameters, expecting at least 3. Usage:"
+	echo -e "  $ bash aax2mp3_easy.sh <audible_login> <audible_password> <files_to_be_converted.aax> \n"
+	exit 1
 fi
 
 #------------------
@@ -41,7 +41,7 @@ if [ ! -d "audible-activator-master" ]; then
 	if [ $(uname) == "Darwin" ]; then
 		# Install Chrome-Driver for OSX
 		brew cask install chromedriver
-		ln -fs `which chromedriver` chromedriver
+		ln -fs $(which chromedriver) chromedriver
 	else
 		brew install wget
 		# Install Chrome-Driver for Linux

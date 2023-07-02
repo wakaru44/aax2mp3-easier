@@ -1,6 +1,19 @@
 
 [![Snap Status](https://build.snapcraft.io/badge/kz6fittycent/aax2mp3-easy.svg)](https://build.snapcraft.io/user/kz6fittycent/aax2mp3-easy)
 
+
+# Extra notes by Wakaru44
+
+- You can use make to get started faster.
+
+- The project needs python 2 or maximum of 3.8. 3.9 will break due to deprecated methods.
+
+- The project is too old and the Audible credential finder no longer works.
+  You will need to manually obtain your activation code and pass it as an argument.
+  [more info](https://github.com/KrumpetPirate/AAXtoMP3#authcode)
+
+
+
 # To install the snap:
 ```
 sudo snap install aax2mp3-easy --devmode --edge

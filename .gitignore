@@ -1,7 +1,6 @@
 
 # Binaries
 *.aax
-AAXtoMP3-master
 activation.blob
 chromedriver
 
@@ -11,3 +10,18 @@ audible-activator-feature_login_as_arg/
 !.secrets/
 .secrets/*
 !.secrets/*.sample
+
+# Installed / cloned apps
+AAXtoMP3-master
+audible-activator-master/
+
+# Python stuff
+env/
+*pyc
+
+# Temp stuff / Workfiles
+*log
+old/
+output_books/
+converted_books/
+source_books/
