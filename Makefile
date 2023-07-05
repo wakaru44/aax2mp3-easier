@@ -1,4 +1,4 @@
-.PHONY: help init get-aax encode
+.PHONY: help init get-aax encode list process
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -40,4 +40,7 @@ encode: .secrets/activation_bytes ## Start encoding using just the minimal tool
 	bash AAXtoMP3-master/AAXtoMP3 -A $(shell cat .secrets/activation_bytes) --target_dir ./output_books source_books/*.aax
 
 process: get-aax ## Process the files in order. needs an initialised project
-	bin/process.sh > process_$(shell date +%F:%H:%M  ).log 2>&1
+	bash bin/process.sh > process_$(shell date +%F:%H:%M  ).log 2>&1
+
+list: ## List of processed books from logs
+	grep "done converting" process*.log | grep -v "grep\|echo" | cut -d " " -f 4 | xargs basename | sort -h
